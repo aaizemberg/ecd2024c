@@ -12,12 +12,13 @@
         <script type="text/javascript">
             var vl = {
                 $schema: "https://vega.github.io/schema/vega-lite/v6.json",
-                data: { url: "https://vega.github.io/vega-lite/examples/data/movies.json" },
+                data: { format: {type : "csv"}, url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vTV0B3sR4We5c769vUD83WEvZmCoyVC8Nye01uWKsBEM-5lQaTIcsxnH4tkg8VV31IJfhiGFPWkwZAS/pub?gid=197919290&single=true&output=csv" },
                 mark: { type: "bar", tooltip: true },
                 encoding: {
+                    color : {"field": "barrio"},
                     x: {
                         bin: true,
-                        field: "IMDB Rating",
+                        field: "precio_x_m2",
                     },
                     y: { aggregate: "count" },
                 },
